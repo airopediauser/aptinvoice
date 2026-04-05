@@ -1,0 +1,180 @@
+/* Tab switching */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Custom card styling */
+.card-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Form section headers */
+.section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Passenger card */
+.passenger-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.passenger-card .remove-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+/* Invoice line item row */
+.line-item-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr auto;
+    gap: 0.5rem;
+    align-items: end;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: #f8fafc;
+    border-radius: 6px;
+}
+
+/* Database table styling */
+.db-search {
+    max-width: 300px;
+}
+
+/* File upload preview */
+.upload-preview {
+    max-width: 120px;
+    max-height: 80px;
+    object-fit: contain;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+/* Sub-tab styling for database manager */
+.sub-tab {
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 8px 8px 0 0;
+    background: #e5e7eb;
+    border: 1px solid #d1d5db;
+    border-bottom: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+.sub-tab.active {
+    background: white;
+    color: #0d9488;
+    border-color: #0d9488;
+}
+
+/* Totals section */
+.totals-section {
+    max-width: 350px;
+    margin-left: auto;
+}
+.totals-section .total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+}
+.totals-section .total-row.grand-total {
+    font-size: 16px;
+    font-weight: 700;
+    border-top: 2px solid #374151;
+    padding-top: 10px;
+    margin-top: 6px;
+}
+
+/* Template selector */
+.template-option {
+    cursor: pointer;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-align: center;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.template-option.selected {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+.template-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Toast notification */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    z-index: 9999;
+    animation: slideIn 0.3s ease, slideOut 0.3s ease 2.7s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.toast-success { background: #10b981; }
+.toast-error { background: #ef4444; }
+
+@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideOut { from { opacity: 1; } to { opacity: 0; } }
+
+/* Loading spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-box {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 480px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}

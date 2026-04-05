@@ -1,0 +1,16 @@
+# Protect data directory from direct access
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Allow access to uploaded files (images)
+    RewriteRule ^data/uploads/ - [L]
+    
+    # Block access to JSON data files
+    RewriteRule ^data/.*\.json$ - [F,L]
+</IfModule>
+
+# PHP settings
+<IfModule mod_php.c>
+    php_value upload_max_filesize 5M
+    php_value post_max_size 10M
+</IfModule>
